@@ -41,7 +41,7 @@
                 Isabel (en adelante, "la responsable") es la responsable del tratamiento de los datos personales recogidos a través de este sitio web.
             </p>
             <p>
-                <strong>Email de contacto:</strong> <a href="#" class="email-link">isarte2732@gmail.com</a>
+                <strong>Email de contacto:</strong> <a href="#" class="email-link" id="email-text-1"></a>
             </p>
 
             <h2>2. Datos que se recogen</h2>
@@ -116,7 +116,7 @@
                 <li><strong>Oposición</strong> — Oponerse al tratamiento de sus datos</li>
             </ul>
             <p>
-                Para ejercer estos derechos, puede contactar a la responsable en: <a href="#" class="email-link">isarte2732@gmail.com</a>
+                Para ejercer estos derechos, puede contactar a la responsable en: <a href="#" class="email-link" id="email-text-2"></a>
             </p>
             <p>
                 Si considera que el tratamiento de sus datos no se ajusta a la normativa, tiene derecho a presentar una reclamación ante la <strong>Agencia Española de Protección de Datos (AEPD)</strong>: <a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a>
@@ -155,9 +155,14 @@
       (() => {
         const e = ['m','a','i','l','t','o',':','i','s','a','r','t','e','2','7','3','2','@','g','m','a','i','l','.','c','o','m'];
         const email = e.join('');
+        const emailAddr = email.replace('mailto:', '');
         document.querySelectorAll('.email-link').forEach(link => {
           link.href = email;
         });
+        const t1 = document.getElementById('email-text-1');
+        const t2 = document.getElementById('email-text-2');
+        if (t1) t1.textContent = emailAddr;
+        if (t2) t2.textContent = emailAddr;
       })();
     </script>
 
